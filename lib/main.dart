@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectAssignment/screens/login_screen.dart';
 // import 'package:google_fonts/google_fonts.dart';
 import './screens/splash_screen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: LoginScreen(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
