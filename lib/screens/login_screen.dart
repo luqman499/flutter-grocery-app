@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:projectAssignment/constants/colors.dart';
 import 'package:projectAssignment/screens/forget_password_screen.dart';
 import 'package:projectAssignment/widgets/custom_text_field.dart';
-import "package:projectAssignment/widgets/forget_password_screen.dart";
+import 'package:projectAssignment/widgets/primary_button.dart';
+import 'package:projectAssignment/screens/bottom_Nav_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -90,7 +91,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: 50),
-                    PrimaryButton(),
+                    PrimaryButton(
+                      title: 'Next',
+                      icon: Icons.arrow_forward,
+                      ontap: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          (MaterialPageRoute(builder: (c) => BottomNavBar())),
+                          (route) => false,
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("don't Have an Account"),
+                        const SizedBox(width: 6),
+                      ],
+                    ),
                   ],
                 ),
               ),
