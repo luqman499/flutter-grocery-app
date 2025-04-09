@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:projectAssignment/constants/colors.dart';
+import 'package:projectAssignment/screens/profile_screen.dart';
+import 'package:projectAssignment/screens/favorite_screen.dart';
+import 'package:projectAssignment/screens/home_screen.dart';
+import 'package:projectAssignment/screens/cart_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -8,8 +13,40 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  int selectedIndex = 0;
+  List screens = [
+    HomeScreen(),
+    CartScreen(),
+    FavoriteScreen(),
+    ProfileScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text('hiii'));
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: AppColors.fontColor,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+      ),
+      body: screens[selectedIndex],
+    );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectAssignment/screens/signup_screen.dart';
+import 'package:projectAssignment/screens/bottom_Nav_bar.dart';
 import './screens/splash_screen.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SignupScreen(),
+      home: BottomNavBar(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
