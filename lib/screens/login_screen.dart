@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projectAssignment/constants/colors.dart';
 import 'package:projectAssignment/screens/forget_password_screen.dart';
+import 'package:projectAssignment/screens/signup_screen.dart';
 import 'package:projectAssignment/widgets/custom_text_field.dart';
 import 'package:projectAssignment/widgets/primary_button.dart';
 import 'package:projectAssignment/screens/bottom_Nav_bar.dart';
@@ -108,6 +109,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Text("don't Have an Account"),
                         const SizedBox(width: 6),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (c) => SignupScreen()),
+                            );
+                          },
+                          child: Text(
+                            'SignUp',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primaryColor,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],
