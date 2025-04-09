@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projectAssignment/screens/login_screen.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import './screens/splash_screen.dart';
 
 void main() {
@@ -15,12 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter App',
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: SplashScreen(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

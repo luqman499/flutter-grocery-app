@@ -33,7 +33,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 50),
-              Image.asset('images/splash_images.png', width: 200, height: 200),
+              Image.asset('images/splash_image.png', width: 150, height: 150),
               const SizedBox(height: 30),
               Align(
                 alignment: Alignment.bottomLeft,
