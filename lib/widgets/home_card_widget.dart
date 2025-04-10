@@ -27,7 +27,9 @@ class HomeCartWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(imageUrl, height: 80),
+            Image.network(imageUrl, height: 80, fit: BoxFit.contain),
+            SizedBox(height: 8),
+            Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
