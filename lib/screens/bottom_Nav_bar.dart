@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:projectAssignment/constants/colors.dart';
-import 'package:projectAssignment/screens/profile_screen.dart';
-import 'package:projectAssignment/screens/favorite_screen.dart';
-import 'package:projectAssignment/screens/home_screen.dart';
-import 'package:projectAssignment/screens/cart_screen.dart';
+import '../constants/colors.dart';
+import '../screens/profile_screen.dart';
+import '../screens/favorite_screen.dart';
+import '../screens/home_screen.dart';
+import '../screens/cart_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

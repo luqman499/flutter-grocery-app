@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectAssignment/screens/bottom_Nav_bar.dart';
+import '../screens/bottom_Nav_bar.dart';
 import './screens/splash_screen.dart';
 
 void main() {

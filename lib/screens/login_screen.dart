@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projectAssignment/constants/colors.dart';
-import 'package:projectAssignment/screens/forget_password_screen.dart';
-import 'package:projectAssignment/screens/signup_screen.dart';
-import 'package:projectAssignment/widgets/custom_text_field.dart';
-import 'package:projectAssignment/widgets/primary_button.dart';
-import 'package:projectAssignment/screens/bottom_Nav_bar.dart';
+import '../constants/colors.dart';
+import '../screens/forget_password_screen.dart';
+import '../screens/signup_screen.dart';
+import '../widgets/custom_text_field.dart';
+import '../widgets/primary_button.dart';
+import '../screens/bottom_Nav_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

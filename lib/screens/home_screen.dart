@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projectAssignment/widgets/location_widget.dart';
+import 'package:grocery_plus/widgets/custom_text_field.dart';
+import '../widgets/location_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var searchController = TextEditingController();
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -28,6 +30,19 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               LocationWidget(),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              CustomTextField(
+                hintText: 'Search Here',
+                prefixIcon: Icon(Icons.search),
+                controller: searchController,
+              ),
+              SizedBox(height: 12),
+              Expanded(
+                child: GridView.builder(
+                  itemCount: item.vegetalbe.length,
+                  gridDelegate: SilverGridDelegatewithFixedCrossAxisCount(),
+                ),
+              ),
             ],
           ),
         ),

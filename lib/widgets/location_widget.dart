@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectAssignment/constants/colors.dart';
+import '../constants/colors.dart';
 
 class LocationWidget extends StatelessWidget {
   const LocationWidget({super.key});

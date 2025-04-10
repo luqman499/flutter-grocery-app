@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projectAssignment/constants/colors.dart';
-import 'package:projectAssignment/screens/login_screen.dart';
-import 'package:projectAssignment/widgets/custom_text_field.dart';
-import 'package:projectAssignment/widgets/primary_button.dart';
+import '../constants/colors.dart';
+import '../screens/login_screen.dart';
+import '../widgets/custom_text_field.dart';
+import '../widgets/primary_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
