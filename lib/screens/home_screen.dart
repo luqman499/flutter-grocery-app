@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_plus/widgets/custom_text_field.dart';
+import '../constants/grocery_item.dart';
+import '../widgets/home_card_widget.dart';
 import '../widgets/location_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var searchController = TextEditingController();
+    GroceryItem item = GroceryItem();
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -39,8 +42,18 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 12),
               Expanded(
                 child: GridView.builder(
-                  itemCount: item.vegetalbe.length,
-                  gridDelegate: SilverGridDelegatewithFixedCrossAxisCount(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisSpacing: 8,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 20,
+                  ),
+                  itemBuilder: (context, index) {
+                    return HomeCartWidget(
+                      imageUrl: item.vegtable[index]['image'],
+                      title: item.vegtable[index]['title'],
+                      rating: item.vegtable[index]['rating'],
+                    );
+                  },
                 ),
               ),
             ],
