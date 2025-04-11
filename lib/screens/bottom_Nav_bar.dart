@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
-import '../screens/profile_screen.dart';
-import '../screens/favorite_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/profile_screen.dart';
 import '../screens/cart_screen.dart';
+import '../screens/favorite_screen.dart';
+import '../constants/colors.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: BottomNavBar(),
+      theme: ThemeData(primarySwatch: Colors.green),
+    );
+  }
+}
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -14,12 +28,13 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
-  List screens = [
+  final List<Widget> screens = [
     HomeScreen(),
     CartScreen(),
     FavoriteScreen(),
     ProfileScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.primaryColor,
         unselectedItemColor: AppColors.fontColor,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
@@ -50,3 +65,5 @@ class _BottomNavBarState extends State<BottomNavBar> {
     );
   }
 }
+
+//Work to understand

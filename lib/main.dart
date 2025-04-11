@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
-import '../screens/bottom_Nav_bar.dart';
-import './screens/splash_screen.dart';
+import 'screens/bottom_Nav_bar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: BottomNavBar(),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: ThemeData(primarySwatch: Colors.green),
     );
   }
 }
+
+//work on code to understand

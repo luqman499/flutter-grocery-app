@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
-class HomeCartWidget extends StatelessWidget {
+class HomeCardWidget extends StatelessWidget {
   final String imageUrl;
   final String title;
   final String rating;
-  const HomeCartWidget({
+
+  const HomeCardWidget({
     super.key,
     required this.imageUrl,
     required this.title,
@@ -15,8 +16,6 @@ class HomeCartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.2,
-      width: MediaQuery.of(context).size.width * 0.4,
       decoration: BoxDecoration(
         color: AppColors.WhiteColor,
         borderRadius: BorderRadius.circular(9),
@@ -27,13 +26,29 @@ class HomeCartWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(imageUrl, height: 80, fit: BoxFit.contain),
+            Image.network(
+              imageUrl,
+              height: 80,
+              fit: BoxFit.contain,
+              errorBuilder: (context, error, stackTrace) {
+                return Icon(Icons.broken_image, size: 80);
+              },
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) return child;
+                return Center(child: CircularProgressIndicator());
+              },
+            ),
             SizedBox(height: 8),
-            Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(
+              title,
+              style: TextStyle(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(rating),
+                SizedBox(width: 4),
                 Icon(Icons.star, color: Colors.amber, size: 12),
               ],
             ),
@@ -43,3 +58,5 @@ class HomeCartWidget extends StatelessWidget {
     );
   }
 }
+
+//work to understand
