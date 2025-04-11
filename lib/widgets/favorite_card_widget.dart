@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_plus/constants/colors.dart';
 
-class CardWidget extends StatelessWidget {
-  const CardWidget({super.key});
+class FavoriteCardWidget extends StatelessWidget {
+  const FavoriteCardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 Image.asset('images/splash_image.png', height: 60, width: 60),
-                const SizedBox(width: 10),
+                const SizedBox(width: 8),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Product Name',
@@ -37,7 +37,13 @@ class CardWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Icon(Icons.delete),
+            Column(
+              children: [
+                Icon(Icons.delete, color: AppColors.primaryColor),
+                SizedBox(height: 10),
+                Icon(Icons.shopping_cart, color: AppColors.primaryColor),
+              ],
+            ),
           ],
         ),
       ),
