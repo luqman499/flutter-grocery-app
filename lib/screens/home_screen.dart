@@ -42,7 +42,9 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 12),
               Expanded(
                 child: GridView.builder(
+                  itemCount: item.vegtable.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisExtent: 200,
                     crossAxisSpacing: 8,
                     crossAxisCount: 2,
                     mainAxisSpacing: 20,
