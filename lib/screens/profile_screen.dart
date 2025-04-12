@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_plus/screens/favorite_screen.dart';
+import 'package:grocery_plus/widgets/profile_option_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -65,8 +66,7 @@ class ProfileScreen extends StatelessWidget {
               Expanded(
                 child: ListView(
                   children: [
-                    _buildProfileOption(
-                      context,
+                    ProfileOptionWidget(
                       icon: Icons.history,
                       title: 'Order History',
                       onTap: () {
@@ -77,8 +77,7 @@ class ProfileScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    _buildProfileOption(
-                      context,
+                    ProfileOptionWidget(
                       icon: Icons.favorite_border,
                       title: 'Wishlist',
                       onTap: () {
@@ -90,8 +89,7 @@ class ProfileScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    _buildProfileOption(
-                      context,
+                    ProfileOptionWidget(
                       icon: Icons.location_on_outlined,
                       title: 'Saved Addresses',
                       onTap: () {
@@ -104,8 +102,7 @@ class ProfileScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    _buildProfileOption(
-                      context,
+                    ProfileOptionWidget(
                       icon: Icons.payment_outlined,
                       title: 'Payment Methods',
                       onTap: () {
@@ -118,8 +115,7 @@ class ProfileScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    _buildProfileOption(
-                      context,
+                    ProfileOptionWidget(
                       icon: Icons.logout,
                       title: 'Logout',
                       onTap: () {
@@ -153,51 +149,6 @@ class ProfileScreen extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildProfileOption(
-    BuildContext context, {
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(9),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
-              spreadRadius: 2,
-              blurRadius: 5,
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.grey.shade700),
-            const SizedBox(width: 16),
-            Text(
-              title,
-              style: GoogleFonts.poppins(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            Spacer(),
-            Icon(
-              Icons.arrow_forward_ios,
-              size: 16,
-              color: Colors.grey.shade400,
-            ),
-          ],
         ),
       ),
     );

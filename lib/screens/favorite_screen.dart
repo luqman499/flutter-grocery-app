@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_plus/widgets/favorite_card_widget.dart';
+import '../widgets/primary_button.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
@@ -8,6 +9,14 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Favorite Screen')),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16),
+        child: PrimaryButton(
+          title: 'Buy Product',
+          icon: Icons.shopping_bag,
+          ontap: () {},
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.only(left: 16.0, right: 16.0),
         child: ListView.builder(
